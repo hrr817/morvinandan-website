@@ -1,0 +1,126 @@
+html, body {
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 100%; 
+    margin: 0px;
+    font-size: calc(1em + 1vw);
+  }
+
+body * {
+    box-sizing: border-box;
+    font-size: calc(1em + 1vw);
+}
+
+.contact-form {
+    margin-top: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.contact-text {
+    font-size: 3em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgba(250, 250, 250, 0.9);
+    display: block;
+    padding: 30px;
+    text-align: center;
+    background:var(--color-main);
+}
+
+.contact-form form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template: repeat(auto, 1fr) / repeat(4, 1fr);
+    grid-template-areas: 
+        'n n e e'
+        'w w w w'
+        't t t t'
+        '. . s s';
+}
+
+@media only screen  
+  and (max-device-width: 768px)  {
+
+    .contact-text {
+        font-size: 2em;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: rgba(250, 250, 250, 0.9);
+        display: block;
+        padding: 15px;
+        text-align: center;
+        background:var(--color-main);
+    }
+
+    .contact-form form {
+        justify-content: unset;
+        grid-template-areas: 
+            'n n n n'
+            'e e e e'
+            'w w w w'
+            't t t t'
+            '. s s .';
+    }
+
+}
+
+
+.name {
+    grid-area: n;
+}
+
+.email {
+    grid-area: e;
+}
+
+.website {
+    grid-area: w;
+}
+
+.message-field {
+    grid-area: t;
+}
+
+.submit {
+    grid-area: s;
+}
+
+.contact-form input[type=text], .contact-form input[type=email] {
+    width: auto;
+    border: 1px solid rgba(210, 210, 210, 0.9);
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'Comfortaa', sans-serif;
+    margin: 10px;
+}
+
+.contact-form textarea {
+    width: auto;
+    border: 1px solid rgba(210, 210, 210, 0.9);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    height: 300px;
+    font-family: 'Comfortaa', sans-serif;
+    resize: none;
+}
+
+.contact-form input[type=submit] {
+    width: auto;
+    border: 1px solid rgba(210, 210, 210, 0.9);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    background: transparent;
+    font-family: 'Comfortaa', sans-serif;
+    transition: all 0.3s ease-out;
+}
+
+
+.contact-form input[type=submit]:hover {
+    color: var(--color-main);
+    background: rgba(0, 0, 0, 0.07);
+    transform: translate(0, -5px);
+}

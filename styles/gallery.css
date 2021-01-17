@@ -1,0 +1,348 @@
+body, body * {
+	margin:          unset;
+	box-sizing:      unset;
+	padding:         unset;
+	font-size:       unset;
+	color:           unset;
+	text-decoration: unset;
+}
+
+
+.gallery {
+    width: 100%;
+    padding: 20px 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-areas: 
+        "h h h"
+        "a b c"
+        "d e f";
+    text-align: center;
+}
+
+
+.gallery .head {
+    grid-area: h;
+    display: inline-grid;
+    height: calc(8vw + 8vh);
+    justify-content: center;
+    align-content: center;
+    
+}
+
+
+.gallery #a {
+    grid-area: a;
+}
+
+.gallery #b {
+    grid-area: b;
+}
+
+.gallery #c {
+    grid-area: c;
+}
+
+.gallery #d {
+    grid-area: d;
+}
+
+.gallery #e {
+    grid-area: e;
+}
+
+.gallery #f {
+    grid-area: f;
+}
+
+
+.gallery .title {
+    display: inline-flex;
+    font-family: 'Gudea', sans-serif;
+    font-size: calc(4vw + 4vh);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+
+.gallery img {
+    width: 400px;
+    height: auto;
+    margin: 20px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+
+/* For Mobiles */
+@media only screen and (max-width: 768px) { 	
+    
+    .gallery {
+        grid-template-areas: 
+            "h h"
+            "a b"
+            "c d"
+            "e f";
+    }
+    
+    .gallery img {
+        width: 150px;
+        height: auto;
+        margin: 10px;
+    }
+
+}
+
+/* For Mobiles, Landscape */
+@media only screen 
+    and (max-width: 768px)
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1) { 	
+    
+    .gallery {
+        grid-template-areas: 
+               "h h h"
+               "a b c"
+               "d e f";
+    }
+    
+    .gallery img {
+        width: 150px;
+        height: auto;
+        margin: 10px;
+    }
+
+}
+
+
+/* For Smaller Screens */
+@media only screen and (max-width: 400px) { 	
+    
+    .gallery {
+        grid-template-areas: 
+            "h h"
+            "a b"
+            "c d"
+            "e f";
+    }
+    
+    .gallery img {
+        width: 130px;
+        height: auto;
+        margin: 10px;
+    }
+
+}
+
+/* For Tabs */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px)  {
+   
+      .gallery {
+           grid-template-areas: 
+               "h h h"
+               "a b c"
+               "d e f";
+       }
+    
+      .gallery img {
+           width: 220px;
+           margin: 10px;
+    }
+
+}
+
+
+
+/* For Tabs, Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+   
+      .gallery {
+           grid-template-areas: 
+               "h h h"
+               "a b c"
+               "d e f";
+       }
+    
+      .gallery img {
+           width: 300px;
+           margin: 10px;
+    }
+
+}
+
+/* For Bigger Tabs*/
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) {
+   
+      .gallery {
+           grid-template-areas: 
+               "h h h"
+               "a b c"
+               "d e f";
+       }
+    
+      .gallery img {
+           width: 300px;
+           margin: 10px;
+    }
+
+}
+
+
+.view {
+    z-index: 9999;
+    position: fixed;
+	display: none;
+	justify-content: center;
+    align-content: center;
+	flex-direction: column;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+    
+	-webkit-animation-name: viewAnimation;
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-name: viewAnimation;
+    -moz-animation-duration: 0.4s;
+    -o-animation-name: viewAnimation;
+    -o-animation-duration: 0.4s    
+    animation-name: viewAnimation;
+    animation-duration: 0.4s;
+}
+
+.view::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+@-webkit-keyframes viewAnimation {
+  from {-webkit-opacity: 0.5;} 
+  to {-webkit-opacity:1;}
+}
+
+@-moz-keyframes viewAnimation {
+  from {-moz-opacity:0.5} 
+  to {-moz-opacity:1}
+}
+
+@-o-keyframes viewAnimation {
+  from {-o-opacity:0.5} 
+  to {-o-opacity:1}
+}
+
+@keyframes viewAnimation {
+  from {opacity:0.5} 
+  to {opacity:}
+}
+
+.view img {
+	margin: auto;
+	top: auto;
+	width: 80%;
+	-webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    -moz-animation-name: zoom;
+    -moz-animation-duration: 0.6s;
+    -o-animation-name: zoom;
+    -o-animation-duration: 0.6s    
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@-moz-keyframes zoom {
+  from {-moz-transform:scale(0)} 
+  to {-moz-transform:scale(1)}
+}
+
+@-o-keyframes zoom {
+  from {-o-transform:scale(0)} 
+  to {-o-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+
+/* The Close Button */
+.close {
+    z-index: 2;
+    position: absolute;
+	font-size: 5em;
+	font-family: Trebuchet MS;
+	color: rgba(250, 250, 250, 0.9);
+	top:  -15px;
+	right: 25px;
+	cursor: pointer;
+	-webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    -moz-animation-name: zoom;
+    -moz-animation-duration: 0.6s;
+    -o-animation-name: zoom;
+    -o-animation-duration: 0.6s    
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+/* The caption */
+.caption {
+    display: inline-flex;
+    align-self: center;
+    position: absolute;
+    margin: auto;
+	z-index: 999;
+	bottom: 5%;
+	font-family: Trebuchet MS;
+	color: #fff;
+	font-size: 2em;
+    -webkit-animation-name: captionAnimation;
+    -webkit-animation-duration: 0.6s;
+    -moz-animation-name: captionAnimation;
+    -moz-animation-duration: 0.6s;
+    -o-animation-name: captionAnimation;
+    -o-animation-duration: 0.6s    
+    animation-name: captionAnimation;
+    animation-duration: 0.6s;
+}
+
+
+@-webkit-keyframes captionAnimation {    
+  from {
+      -webkit-transform: translateY(-100%)} 
+  to {-webkit-transform:transform(0)}
+}
+
+@-moz-keyframes captionAnimation {
+  from {-moz-transform: translateY(-100%)} 
+  to {-moz-transform:transform(0)}
+}
+
+@-o-keyframes captionAnimation {
+  from {-o-transform: translateY(-100%)} 
+  to {-o-transform:transform(0)}
+}
+
+@keyframes captionAnimation {
+  from {transform: translateY(-100%)} 
+  to {transform:transform(0)}
+}

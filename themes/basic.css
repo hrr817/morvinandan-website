@@ -1,0 +1,11 @@
+/*  Colors  */
+
+:root { /* or Html element */
+    --c1: #034C8C;
+    --c2: #EBEFF2;
+    --c3: #27B9F2;
+    --c4: #F28705;
+    --dark: hsla(0, 0%, 5%, 1);
+    
+}
+
